@@ -1,16 +1,15 @@
 #include <stdio.h>
 #define tam 5
-
-int main(){
-    
-    int array[tam];
-    
     void swap(int* x, int* y){
         int aux = *x;
         *x = *y;
         *y = aux;
     }
+
+int main(){
     
+    int array[tam];
+
     for(int i=0; i<tam; i++){
         printf("Digite um numero inteiro: ");
         scanf("%d", &array[i]);
