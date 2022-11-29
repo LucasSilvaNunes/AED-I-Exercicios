@@ -12,7 +12,7 @@ int main(){
     }
     
     for(int i=0; i<tam; i++){
-        printf("Digite um número inteiro: ");
+        printf("Digite um numero inteiro: ");
         scanf("%d", &array[i]);
     }
     
@@ -20,15 +20,9 @@ int main(){
         for(int j=0; j<tam-1; j++){
             if(array[j] > array[j+1]){
                 swap(&array[j], &array[j+1]);
-                for(int i=0; i<tam; i++){
-                    printf("%d ", array[i]);
-                }
-                printf("\n");
             }
         }
     }
-    
-    printf("\n");
     
    for(int i=0; i<tam; i++){
         printf("%d ", array[i]);
