@@ -1,5 +1,6 @@
 #include <stdio.h>
 #define tam 5
+
     void swap(int* x, int* y){
         int aux = *x;
         *x = *y;
