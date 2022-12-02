@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define tam 5
 
-int buscaBinaria(int array[], int valor){
+int buscaLinear(int array[], int valor){
     for(int i=0; i<tam; i++){
         if(array[i] == valor){
             printf("Valor encontrado na posicao %d!", i+1);
@@ -23,7 +23,7 @@ int main(){
     printf("Digite o valor que voce deseja buscar: ");
     scanf("%d", &valor);
 
-    buscaBinaria(array, valor);
+    buscaLinear(array, valor);
 
     return 0;
 }
