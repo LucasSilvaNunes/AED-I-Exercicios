@@ -14,6 +14,7 @@ int buscaBinaria(int vetor[], int valor){
             comeco = index+1;
         }
     }
+    printf("Valor nao encontrado!");
     return -1;
 }
 
