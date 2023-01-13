@@ -47,6 +47,45 @@ void percorrerLista(){ //precisa de uma variavél auxiliar pra percorrer a lista
     }
 }
 
+void inserirFim(int valor){
+    no *aux, *p;
+    aux = (no*) malloc(sizeof(no));
+    if(aux!=NULL){
+        aux->info = valor;
+        aux->prox = NULL;
+        if(!listaVazia()){
+            p = inicioL;
+            while(p->prox != NULL){
+                p = p->prox;
+            }
+            p->prox = aux;
+        }else{
+            inicioL = aux;
+        }
+    }
+}
+
+void remover(int valor){
+    no *ant, *aux;
+    aux = inicioL;
+    ant = NULL;
+    if(!listaVazia()){
+        //procurar pelo nó a remover
+        while(aux != NULL && aux->info!=valor){
+            ant = aux;
+            aux=aux->prox;
+        }
+        if(aux == NULL){
+            printf("Valor nao encontrado.")
+        }else{
+            
+        }
+        
+    }else{
+        printf("\nLista Vazia!");
+    }
+}
+
 int main(){
     
     int valor, op;
