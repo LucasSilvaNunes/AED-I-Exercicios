@@ -8,8 +8,6 @@ f) remover um elemento dado o seu valor.
 g) imprimir toda a lista
 */
 
-//O código não está completo, ainda faltam algumas implementações de algumas funções
-
 #include <stdio.h>
 #define MAX 5
 typedef struct lista{
@@ -29,9 +27,15 @@ int buscarValor(lista L, int valor){
     }
     return -1;
 }
+
+
 void inserir_primeiro(lista* L, int valor){
   if(L->n > 0){
-    
+    (L->n)++;
+    for(int i = L->n-1 ; i > 0 ; i --){
+      L->valores[i] = L->valores[i-1];
+      }
+    L->valores[0] = valor;
   }else{
     printf("Lista vazia!");
   }
@@ -52,7 +56,10 @@ void modificar_elemento(lista* L,int posicao, int novoValor){
 }
 
 void remover_primeiro(lista* L){
-  L->valores[0] = 0;
+  for(int i = 0; i < L->n ; i++){
+    L->valores[i] = L->valores[i+1];
+  }
+  (L->n)--;
 }
 
 void remover_ultimo(lista* L){
@@ -79,7 +86,7 @@ int main(){
   lista l;
   inicializar_lista(&l);
   do{
-    printf("\n1- Inserir valor na primeira pos.\n2-Inserir valor na ultima pos\n3- Modificar elemento.\n4- Remover o primeiro elem.\n5- Remover o ultimo elem.\n6- Remover elemento.\n7- Imprimir a lista toda.\n8- Sair.");
+    printf("\n1- Inserir valor na primeira pos.\n2- Inserir valor na ultima pos\n3- Modificar elemento.\n4- Remover o primeiro elem.\n5- Remover o ultimo elem.\n6- Remover elemento.\n7- Imprimir a lista toda.\n8- Sair.");
     printf("\nO que deseja fazer?\n");
     scanf("%d", &resp);
     int valor=0;
