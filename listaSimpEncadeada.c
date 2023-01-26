@@ -10,7 +10,9 @@ typedef struct no {
 
 no *inicioL;
 
-void inicializarLista() { inicioL = NULL; }
+void inicializarLista() { 
+  inicioL = NULL;
+}
 
 int listaVazia() {
   if (inicioL == NULL) {
@@ -37,7 +39,6 @@ void insereInicio(int cod, char nome[], float preco) {
 
 void percorrerLista() {
   no *aux;
-
   if (!listaVazia()) {
     aux = inicioL;
     while (aux != NULL) {
