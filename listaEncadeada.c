@@ -76,9 +76,14 @@ void remover(int valor){
             aux=aux->prox;
         }
         if(aux == NULL){
-            printf("Valor nao encontrado.")
+            printf("Valor nao encontrado.");
         }else{
-            
+          if(aux->prox == NULL){
+            ant->prox = NULL;
+          }else{
+            ant->prox = aux->prox;  
+          }
+            free(aux);
         }
         
     }else{
@@ -91,10 +96,10 @@ int main(){
     int valor, op;
     inicializarLista();
     do{
-        printf("\n1- Inserir pelo inicio\n2- Percorrer e imprimir os dados\n3-Sair");
+        printf("\n1- Inserir pelo inicio\n2- Percorrer e imprimir os dados\n3-Sair\n4-Remover algum elemento");
         printf("\nInforme sua alternativa: ");
         scanf("%d", &op);
-        if(op!=1 && op!=2 && op!=3){
+        if(op!=1 && op!=2 && op!=4){
             printf("\nAlternativa invalida.");
         }else{
             if(op==1){
@@ -103,6 +108,10 @@ int main(){
                 inserirInicio(valor);
             }else if(op==2){
                 percorrerLista();
+            }else if(op == 4){
+                printf("\nDigite o elemento a ser removido: ");
+              scanf("%d", &valor);
+              remover(valor);
             }else{
                 printf("\nEncerrando...");
             }
